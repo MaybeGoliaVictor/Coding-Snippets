@@ -1,0 +1,150 @@
+{
+    "For Loop": {
+      "prefix": ["forLoop"],
+      "body": ["for (let ${1:n} = 0; ${1:n} < ${2:arr}.length; ${1:n}++) {", "\t$0", "}"],
+      "description": "A For loop."
+    },
+
+    "Copyright": {
+      "prefix": "copyright",
+      "body": [
+        "/*******************************************************",
+        "* Copyright (C) ${CURRENT_YEAR} ${1:name} ${2:email}",
+        "* ",
+        "* This file is part of ${3:project}.",
+        "* ",
+        "* ${3:project} can not be copied and/or distributed without the express",
+        "* permission of ${1:name}",
+        "*******************************************************/",
+        "",
+        "$0"
+
+      ],
+      "description": "copyright text"
+    },
+
+    "Preventing Scrolling": {
+      "prefix": "!arrowScroll",
+      "body": [
+        "onkeydown = function (e) {",
+          "if (e.key === 'ArrowUp' || e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'ArrowRight') {",
+              "e.view.event.preventDefault();",
+          "}",
+      "}",
+        "$0"
+
+      ],
+      "description": "Prevent scrolling with arrow keys"
+    },
+
+    "If something is undefined": {
+      "prefix": "ifUndefined",
+      "body": [
+        "if (${1:value} == undefined) {",
+        "${1:value} = ${2:default};",
+        "}",
+
+      ],
+      "description": "If statement testing if a value is undefined, then setting it to a default"
+    },
+
+    "If something isn't undefined": {
+      "prefix": "!ifUndefined",
+      "body": [
+        "if (${1:value} != undefined) {",
+          "$0",
+        "}",
+      ],
+      "description": "If statement testing if a value is defined"
+    },
+
+    "Row & Col For Loop": {
+      "prefix": ["rowColLoop"],
+      "body": [
+        "for (let row = 0; row < ${1:arr}.length; row++) {", 
+          "for (let col = 0; col < ${1:arr}[row].length; col++) {", 
+            "$0",
+          "}",
+        "}"
+      ],
+      "description": "A For Loop for looping through rows and columns of a 2D array array."
+    },
+
+    "Class Boilerplate": {
+      "prefix": ["classBoiler"],
+      "body": [
+        "class ${1:className}() {", 
+          "constructor (${2:x}, ${3:y}, ${4:r}, ${5:g}, ${6:b}, ${7:sizeX}, ${8:sizeY}=${7:sizeX}) {", 
+              "this.${2:x} = ${2:x};",
+              "this.${3:y} = ${3:y};",
+              "this.${4:r} = ${4:r};",
+              "this.${5:g} = ${5:g};",
+              "this.${6:b} = ${6:b};",
+              "this.${7:sizeX} = ${7:sizeX};",
+              "this.${8:sizeY} = ${8:sizeY};",
+          "}",
+
+          "update() {",
+            "$0",
+          "}",
+        "}"
+      ],
+      "description": "A Boiler Plate for creating classes."
+    },
+
+    "HTML Boilerplate": {
+      "prefix": ["htmlBoiler"],
+      "body": [
+        "<!DOCTYPE html>",
+        "<html>",
+        "",
+        "<head>",
+          "<meta charset='UTF-8'>",
+          "<meta http-equiv='X-UA-Compatible' content='IE=edge'>",
+          "<meta name='viewport' content='width=device-width, initial-scale=1'>",
+          "",
+          "<title>${2:title}</title>",
+          "<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.min.js'></script>",
+          "<script src='${1:sketch}.js' type='text/javascript'></script>",
+        "</head>",
+        "",
+        "<body>",
+        "</body>",
+        "",
+        "</html>", 
+      ],
+      "description": "A Boiler Plate for creating HTML p5 documents."
+    },
+
+    "Nice Red": {
+      "prefix": "--red",
+      "body": [
+        "rgb(226,26,26)",
+      ],
+      "description": "A nice red Color."
+    },
+    
+    "Nice Blue": {
+      "prefix": "--blue",
+      "body": [
+        "rgb(26, 113, 226)",
+      ],
+      "description": "A nice blue Color."
+    },
+
+    "Nice Cyan": {
+      "prefix": "--cyan",
+      "body": [
+        "rgb(26, 226, 226)",
+      ],
+      "description": "A nice cyan Color."
+    },
+    
+    "Nice Green": {
+      "prefix": "--green",
+      "body": [
+        "rgb(113, 226, 113)",
+      ],
+      "description": "A nice cyan Color."
+    },
+}
