@@ -1,0 +1,77 @@
+{
+  "Creates a Tensorflow Sequential Model": {
+    "prefix": "TFmodel",
+    "body": [
+      "let model = tf.sequential();",
+      "",
+      "let hidden = tf.layers.dense({",
+      "  units: ${1:16},",
+      "  activation: 'sigmoid',",
+      "  inputDim: ${2:3}",
+      "});",
+      "",
+      "let output = tf.layers.dense({",
+      "  units: ${3:9},",
+      "  activation: 'softmax'",
+      "});",
+      "model.add(hidden);",
+      "model.add(output);",
+      "",
+      "$0"
+    ],
+    "description": "Creates a Tensorflow Sequential Model"
+  },
+
+  "Model.compile function": {
+    "prefix": "TFcompile",
+    "body": [
+      "const lr = 0.2;",
+      "const optimizer = tf.train.sgd(lr);",
+
+      "model.compile({",
+      "  optimizer: optimizer,",
+      "  loss: 'categoricalCrossentropy'",
+      "})",
+      "$0"
+    ],
+    "description": "Model.compile function"
+  },
+
+  "Model.fit function": {
+    "prefix": "TFfit",
+    "body": [
+      "const options = {",
+      "  epochs: 10,",
+      "  validationSplit: 0.1,",
+      "  shuffle: true",
+      "}",
+      "",
+      "model.fit(xs, ys, options).then(results => {",
+      "  console.log(results);",
+      "});",
+      "",
+      "$0"
+    ],
+    "description": "Model.fit function"
+  },
+
+  "Model.predict function": {
+    "prefix": "TFpredict",
+    "body": [
+      "function predict(${1:inputs}) {",
+      "  return tf.tidy(() => {",
+      "    const xs = tf.tensor([${1:inputs}]);",
+      "    const ys = this.model.predict(xs);",
+      "    const outputs = ys.dataSync();",
+      "    xs.dispose();",
+      "    return outputs;",
+      "  });",
+      "}",
+      "",
+      "$0"
+    ],
+    "description": "Model.predict function"
+  }
+
+
+} 

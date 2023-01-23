@@ -1,0 +1,104 @@
+{
+    "CopyrightHTML": {
+      "prefix": "copyright",
+      "scope": "html",
+      "body": [
+        "<!--",
+        "* Copyright (C) ${CURRENT_YEAR} ${1:name} ${2:email}",
+        "* ",
+        "* This file is part of ${3:project}.",
+        "* ",
+        "* ${3:project} can not be copied and/or distributed without the express",
+        "* permission of ${1:name}",
+        "-->",
+        "",
+        "$0"
+      ],
+      "description": "copyright text"
+    },
+
+    "Tensorflow Boiler": {
+      "prefix": "TFBoiler",
+      "body": [
+        "<!DOCTYPE html>",
+        "<html lang=\"en\">",
+        "\t<head>",
+        "\t\t<meta charset=\"UTF-8\" />",
+        "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+        "\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />",
+        "\t\t",
+        "\t\t<script src=\"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js\"></script>",
+        "\t\t",
+        "\t\t<title>${2:title}</title>",
+        "\t\t",
+        "\t</head>",
+        "",
+        "\t<body>",
+        "\t\t<script src=\"${1:mySketch}.js\"></script>",
+        "\t\t$0",
+        "\t</body>",
+        "",
+        "</html>"
+      ],
+      "description": "A boiler plate for a creating HTML tensorflow.js file."
+    },
+
+    "p5 Boilerplate": {
+      "prefix": "p5Boiler",
+      "body": [
+        "<!DOCTYPE html>",
+        "<html lang=\"en\">",
+        "\t<head>",
+        "\t\t<meta charset=\"UTF-8\" />",
+        "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+        "\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />",
+        "\t\t",
+        "\t\t<script src=\"https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js\"></script>",
+        "\t\t",
+        "\t\t<!-- Libraries -->",
+        "\t\t<script src=\"https://cdn.jsdelivr.net/gh/GoliaVictor/canvasUI@3564933/Color.js\"></script>",
+        "\t\t",
+        "\t\t<title>${2:title}</title>",
+        "\t\t",
+        "\t</head>",
+        "",
+        "\t<body style = \"margin: 0px; overflow: hidden;\">",
+        "\t\t<script src=\"${1:mySketch}.js\"></script>",
+        "\t\t$0",
+        "\t</body>",
+        "",
+        "</html>"
+      ],
+      "description": "A boiler plate for a creating HTML p5.js file."
+    },
+
+    "Tensorflow and p5 Boilerplate": {
+      "prefix": "p5TFBoiler",
+      "body": [
+        "<!DOCTYPE html>",
+        "<html lang=\"en\">",
+        "\t<head>",
+        "\t\t<meta charset=\"UTF-8\" />",
+        "\t\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />",
+        "\t\t<meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />",
+        "\t\t",
+        "\t\t<script src=\"https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js\"></script>",
+        "\t\t<script src=\"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js\"></script>",
+        "\t\t",
+        "\t\t<!-- Libraries -->",
+        "\t\t<script src=\"https://cdn.jsdelivr.net/gh/GoliaVictor/canvasUI@3564933/Color.js\"></script>",
+        "\t\t",
+        "\t\t<title>${2:title}</title>",
+        "\t\t",
+        "\t</head>",
+        "",
+        "\t<body style = \"margin: 0px; overflow: hidden;\">",
+        "\t\t<script src=\"${1:mySketch}.js\"></script>",
+        "\t\t$0",
+        "\t</body>",
+        "",
+        "</html>"
+      ],
+      "description": "A boiler plate for a creating HTML p5.js & tensorflow.js file."
+    },
+  }

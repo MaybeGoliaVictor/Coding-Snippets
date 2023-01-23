@@ -1,0 +1,175 @@
+{
+  "For Loop": {
+    "prefix": "forLoop",
+    "body": ["for (let ${1:i} = 0; ${1:i} < ${2:arr}.length; ${1:i}++) {", "\t$0", "}"],
+    "description": "A For loop."
+  },
+
+  "2 For Loops": {
+    "prefix": "2forLoop",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:arr}.length; ${1:i}++) {", 
+        "\tfor (let ${3:j} = 0; ${3:j} < ${2:arr}[${1:i}].length; ${3:j}++) {", 
+          "\t\t$0",
+        "\t}",
+      "}"
+    ],
+    "description": "2 For Loops for looping through a 2D array."
+  },
+
+  "3 For Loops": {
+    "prefix": "3forLoop",
+    "body": [
+      "for (let ${1:i} = 0; ${1:i} < ${2:arr}.length; ${1:i}++) {", 
+        "\tfor (let ${3:j} = 0; ${3:j} < ${2:arr}[${1:i}].length; ${3:j}++) {", 
+          "\t\tfor (let ${4:k} = 0; ${4:k} < ${2:arr}[${1:i}][${3:j}].length; ${4:k}++) {", 
+          "\t\t\t$0",
+          "\t\t}",
+        "\t}",
+      "}"
+    ],
+    "description": "3 For Loops for looping through a 3D array."
+  },
+
+  "Copyright": {
+    "prefix": "copyright",
+    "body": [
+      "/*******************************************************",
+      "* Copyright (C) ${CURRENT_YEAR} ${1:name} ${2:email}",
+      "* ",
+      "* This file is part of ${3:project}.",
+      "* ",
+      "* ${3:project} can not be copied and/or distributed without the express",
+      "* permission of ${1:name}",
+      "*******************************************************/",
+      "",
+      "$0"
+    ],
+    "description": "copyright text"
+  },
+
+  "If something is undefined": {
+    "prefix": "ifUndefined",
+    "body": [
+      "if (${1:value} == undefined) {",
+        "\t${1:value} = ${2:default};",
+      "}",
+    ],
+    "description": "If statement testing if a value is undefined, then setting it to a default"
+  },
+
+  "If something isn't undefined": {
+    "prefix": "!ifUndefined",
+    "body": [
+      "if (${1:value} != undefined) {",
+        "\t$0",
+      "}",
+    ],
+    "description": "If statement testing if a value is defined"
+  },
+
+  "Class Boilerplate": {
+    "prefix": "classBoiler",
+    "body": [
+      "class ${1:className} {", 
+        "\tconstructor (${2:x}, ${3:y}, ${4:width}, ${5:height}) {", 
+          "\t\tthis.${2:x} = ${2:x};",
+          "\t\tthis.${3:y} = ${3:y};",
+          "\t\tthis.${4:width} = ${4:width};",
+          "\t\tthis.${5:height} = ${5:height};",
+        "\t}",
+
+        "\tupdate() {",
+          "\t\t$0",
+        "\t}",
+      "}"
+    ],
+    "description": "A Boiler Plate for creating classes."
+  },
+
+  "Create a Unique ID": {
+    "prefix": "uid",
+    "body": [
+      "Math.floor(Math.random() * Date.now()).toString(16)$0"
+    ],
+    "description": "Creates a random 16 character string based on the current time."
+  },
+
+  "Coordinate in Boundary": {
+    "prefix": "inBoundary",
+    "body": [
+      "if (${1:x} > ${2:leftX} && ${1:x} < ${3:rightX} && ${4:y} > ${5:topY} && {4:y} < ${6:bottomY}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "An if statement that checks whether a coordinate is within a bounding box."
+  },
+
+  "p5 Boiler": {
+    "prefix": "p5Boiler",
+    "body": [
+      "",
+      "",
+      "",
+      "function setup() {",
+      "\tcreateCanvas(${1:screen.width},${2:screen.height})",
+      "\t",
+      "}",
+      "",
+      "",
+      "function draw() {",
+      "\tbackground(${3:0})",
+      "\t",
+      "\t$0",
+      "}"
+    ],
+    "description": "Setup a new p5 sketch."
+  },
+
+  "Fast p5 Boiler": {
+    "prefix": "p5BoilerFast",
+    "body": [
+      "",
+      "",
+      "",
+      "function setup() {",
+      "\tcreateCanvas(${1:screen.width},${2:screen.height})",
+      "\tnoLoop()",
+      "}",
+      "",
+      "",
+      "function draw() {",
+      "\tsetTimeout(redraw, 0)",
+      "\tbackground(${3:0})",
+      "\t",
+      "\t$0",
+      "\t",
+      "\t_draw()",
+      "}"
+    ],
+    "description": "Setup a new p5 sketch with a framerate that surpases the monitor framerate, however the framerate may be inconsistent."
+  },
+
+  "Download File": {
+    "prefix": "downloadFile",
+    "body": [
+      "function download(filename = \"${1:defaultFileName}\") {",
+      "\tvar element = document.createElement('a');",
+      "\telement.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(JSON.stringify(",
+      "\t\t{",
+      "\t\t\t$0",
+      "\t\t}",
+      "\t)));",
+      "\telement.setAttribute('download', filename);",
+      "\t",
+      "\telement.style.display = 'none';",
+      "\tdocument.body.appendChild(element);",
+      "\t",
+      "\telement.click();",
+      "\t",
+      "\tdocument.body.removeChild(element);",
+      "}",
+    ],
+    "description": "A function to download a file with data given the file name."
+  },
+}
